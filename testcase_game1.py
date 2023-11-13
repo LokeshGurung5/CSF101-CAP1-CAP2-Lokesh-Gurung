@@ -1,7 +1,7 @@
 import unittest
 import pygame
-from unittest.mock import Mock, patch
-from game1 import YellowDuck, BrownDuck, images, game_window, display_score
+from unittest.mock import Mock
+from game1 import YellowDuck, BrownDuck, display_score
 from pygame.sprite import Group
 from pygame import Surface
 from pygame.locals import MOUSEBUTTONDOWN
@@ -96,9 +96,6 @@ class TestDisplayScore(unittest.TestCase):
        self.score = 1234
        display_score(self.game_window, self.images, self.score)
        self.assertEqual(self.score, 1234)
-
-
-
 
 class Sprite:
     def __init__(self, points):
