@@ -1,7 +1,7 @@
 import unittest
 import pygame
-from unittest.mock import Mock
-from game1 import YellowDuck, BrownDuck, display_score
+from unittest.mock import Mock, patch
+from game1 import YellowDuck, BrownDuck, images, game_window, display_score
 from pygame.sprite import Group
 from pygame import Surface
 from pygame.locals import MOUSEBUTTONDOWN
@@ -126,7 +126,7 @@ def handle_mouse_click(event, all_sprites, remaining_bullets, score):
 
 class TestHandleMouseClick(unittest.TestCase):
     def test_handle_mouse_click(self):
-        pygame.init() 
+        pygame.init() # Initialize pygame
         all_sprites = [Sprite(100) for _ in range(5)]
         remaining_bullets = 5
         score = 0
