@@ -103,15 +103,6 @@ class Sprite:
         self.points = points
         self.rect = pygame.Rect(0, 0, 10, 10)
 
-def handle_mouse_click(event, all_sprites, remaining_bullets, score):
-    if event.type == MOUSEBUTTONDOWN:
-        remaining_bullets -= 1
-        click_x, click_y = event.pos
-        for sprite in all_sprites:
-            if sprite.is_hit == False and sprite.rect.collidepoint(click_x, click_y):
-                sprite.is_hit = True
-                score += sprite.points
-                break
 
 def handle_mouse_click(event, all_sprites, remaining_bullets, score):
     if event.type == MOUSEBUTTONDOWN:
@@ -126,7 +117,7 @@ def handle_mouse_click(event, all_sprites, remaining_bullets, score):
 
 class TestHandleMouseClick(unittest.TestCase):
     def test_handle_mouse_click(self):
-        pygame.init() # Initialize pygame
+        pygame.init() 
         all_sprites = [Sprite(100) for _ in range(5)]
         remaining_bullets = 5
         score = 0
@@ -138,9 +129,5 @@ class TestHandleMouseClick(unittest.TestCase):
         self.assertEqual(score, 100)
         self.assertTrue(all_sprites[0].is_hit)  
 
-
-
-
-   
 if __name__ == '__main__':
    unittest.main()
