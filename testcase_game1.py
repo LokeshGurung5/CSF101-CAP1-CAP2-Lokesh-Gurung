@@ -37,8 +37,7 @@ class TestGameLoop(unittest.TestCase):
        self.assertTrue(running)
        self.assertEqual(remaining_bullets, 10)
        self.assertEqual(score, 0)
-
-# Create a mock gameover image
+       
 game1_gameover_image = Mock()
 game1_gameover_image.get_width.return_value = 200
 
@@ -62,7 +61,7 @@ class TestYellowDuck(unittest.TestCase):
     def setUp(self):
         self.yellow_duck_group = Group()
         self.all_sprites = Group()
-        self.images = {'duck_yellow': Surface((10, 10))} # create a mock Surface object
+        self.images = {'duck_yellow': Surface((10, 10))} 
 
     def test_add_duck_to_group(self):
         duck = YellowDuck(0)
